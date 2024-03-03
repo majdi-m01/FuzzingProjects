@@ -1,0 +1,107 @@
+noname.xml:1: parser error : Malformed declaration expecting version
+<?xml encoding="no
+      ^
+noname.xml:1: parser error : Blank needed here
+<?xml encoding="no
+      ^
+noname.xml:1: parser error : String not closed expecting " or '
+<?xml encoding="no
+                  ^
+noname.xml:1: parser error : switching encoding: encoder error
+�������������ITY<!--@;!-!--><!--EN!-�%%%<?%%%%%������='����ITY<!--ENTT@;!---!-
+                  ^
+noname.xml:1: parser error : Blank needed here
+�������������ITY<!--@;!-!--><!--EN!-�%%%<?%%%%%������='����ITY<!--ENTT@;!---!-
+                  ^
+noname.xml:1: parser error : parsing XML declaration: '?>' expected
+�������������ITY<!--@;!-!--><!--EN!-�%%%<?%%%%%������='����ITY<!--ENTT@;!---!-
+                  ^
+noname.xml:1: parser error : Input is not proper UTF-8, indicate encoding !
+Bytes: 0xF2 0x25 0x25 0x25
+�������������ITY<!--@;!-!--><!--EN!-�%%%<?%%%%%������='����ITY<!--ENTT@;!---!-
+                                     ^
+noname.xml:1: parser error : Comment must not contain '--' (double-hyphen)
+�������������ITY<!--@;!-!--><!--EN!-�%%%<?%%%%%������='����ITY<!--ENTT@;!---!-
+                                                                   ^
+noname.xml:1: parser error : Comment must not contain '--' (double-hyphen)
+�������������ITY<!--@;!-!--><!--EN!-�%%%<?%%%%%������='����ITY<!--ENTT@;!---!-
+                                                                             ^
+noname.xml:1: parser error : Comment must not contain '--' (double-hyphen)
+�������������ITY<!--@;!-!--><!--EN!-�%%%<?%%%%%������='����ITY<!--ENTT@;!---!-
+                                                                              ^
+noname.xml:1: parser error : Double hyphen within comment: <!--E$&lt;<!
+%������='����ITY<!--ENTT@;!---!--><!--EN!-���<;>BT;;><;><<<!!-!--><!--E$&lt;<!
+                                                                               ^
+noname.xml:1: parser error : Double hyphen within comment: <!--E$&lt;<!--ENT[@;!-!
+�ITY<!--ENTT@;!---!--><!--EN!-���<;>BT;;><;><<<!!-!--><!--E$&lt;<!--ENT[@;!-!
+                                                                               ^
+noname.xml:1: parser error : Double hyphen within comment: <!--E$&lt;<!--ENT[@;!-!---<!
+!--ENTT@;!---!--><!--EN!-���<;>BT;;><;><<<!!-!--><!--E$&lt;<!--ENT[@;!-!---<!
+                                                                               ^
+noname.xml:1: parser error : Double hyphen within comment: <!--T;!-!
+-!--><!--E$&lt;<!--ENT[@;!-!---<!--EN!--><!--ENTIV=E-!--><!--T;I-!--><!--T;!-!
+                                                                               ^
+noname.xml:1: parser error : Double hyphen within comment: <!--T;!-!---<!
+<!--E$&lt;<!--ENT[@;!-!---<!--EN!--><!--ENTIV=E-!--><!--T;I-!--><!--T;!-!---<!
+                                                                               ^
+noname.xml:1: parser error : Double hyphen within comment: <!--ENT[@;!-!
+!--T;I-!--><!--T;IV!--><!--E;;���nENTBT;;><;><<<!!-!--><!--E$!--><!--ENT[@;!-!
+                                                                               ^
+noname.xml:1: parser error : Double hyphen within comment: <!--ENT[@;!-!---<!
+I-!--><!--T;IV!--><!--E;;���nENTBT;;><;><<<!!-!--><!--E$!--><!--ENT[@;!-!---<!
+                                                                               ^
+encoding error : input conversion failed due to input error, bytes 0xE2 0xE2 0xE2 0xE2
+I/O error : encoder error
+=================================================================
+==77763==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x621000002500 at pc 0x0000004ed2b5 bp 0x7ffeeb36f030 sp 0x7ffeeb36f028
+READ of size 1 at 0x621000002500 thread T0
+    #0 0x4ed2b4 in xmlParseCommentComplex /libxml2/parser.c:4611:2
+    #1 0x4ed2b4 in xmlParseComment /libxml2/parser.c:4797:5
+    #2 0x529234 in xmlParseMisc /libxml2/parser.c:10216:6
+    #3 0x529f0e in xmlParseDocument /libxml2/parser.c:10313:5
+    #4 0x547ba1 in xmlDoRead /libxml2/parser.c:14657:5
+    #5 0x547f32 in xmlReadMemory /libxml2/parser.c:14740:13
+    #6 0x4c47a3 in harness /libxml2/./harness.c:11:18
+    #7 0x4c47a3 in main /libxml2/./harness.c:21:3
+    #8 0x7ff15044f082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082)
+    #9 0x41c5dd in _start (/libxml2/fuzzer+0x41c5dd)
+
+0x621000002500 is located 0 bytes to the right of 4096-byte region [0x621000001500,0x621000002500)
+allocated by thread T0 here:
+    #0 0x494d1d in malloc (/libxml2/fuzzer+0x494d1d)
+    #1 0x579c70 in xmlBufferCreate /libxml2/tree.c:6892:32
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /libxml2/parser.c:4611:2 in xmlParseCommentComplex
+Shadow bytes around the buggy address:
+  0x0c427fff8450: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c427fff8460: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c427fff8470: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c427fff8480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c427fff8490: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0c427fff84a0:[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c427fff84b0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c427fff84c0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c427fff84d0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c427fff84e0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c427fff84f0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==77763==ABORTING

@@ -1,0 +1,22 @@
+00000000012f6f50 B __afl_area_initial
+0000000000a4dcc0 D __afl_area_ptr
+00000000009383a0 T __afl_auto_init
+00000000009381f0 T __afl_manual_init
+00000000012f6ee9 b __afl_manual_init.init_done
+0000000000938120 T __afl_persistent_loop
+00000000012f6ee4 b __afl_persistent_loop.cycle_cnt
+00000000012f6ee0 b __afl_persistent_loop.first_pass
+000000000000007c B __afl_prev_loc
+00000000012f6eea b __afl_start_forkserver.tmp
+000000000094bc60 r __const.harness.dummy_xml_name
+00000000004c4410 T harness
+        linux-vdso.so.1 (0x00007ffe2ddb4000)
+        libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007fa811d06000)
+        libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fa811bb7000)
+        libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fa811b94000)
+        librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007fa811b8a000)
+        libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007fa811b84000)
+        libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fa811b69000)
+        libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fa811975000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007fa811d29000)
+/libxml2/fuzzer: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=eed53d356e2c09465c326a767cf614380b4f9458, for GNU/Linux 3.2.0, with debug_info, not stripped
